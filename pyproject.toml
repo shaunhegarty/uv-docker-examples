@@ -7,4 +7,9 @@
     version = "0.1.0"
 
 [tool.uv]
-    dev-dependencies = ["ruff>=0.6.3"]
+    dev-dependencies = [
+    "jupyterlab>=4.2.5",
+    "mypy",
+    "pytest",
+    "ruff>=0.6.3",
+]
