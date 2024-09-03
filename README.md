@@ -24,6 +24,7 @@ docker run --rm uv-single-python
 ## Multi-stage build
 - We want to use a multi-stage build to keep the image size down
 
+To run:
 ```bash
 docker build . -f Dockerfile.multi.python -t uv-multi-python
 docker run --rm uv-multi-python
@@ -32,6 +33,7 @@ docker run --rm uv-multi-python
 ## Multi-stage build using alpine
 - Use alpine to keep the image size down even more
 
+To run:
 ```bash
 docker build . -f Dockerfile.multi.python.alpine -t uv-multi-python-alpine
 docker run --rm uv-multi-python-alpine
