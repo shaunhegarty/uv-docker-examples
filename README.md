@@ -47,3 +47,11 @@ docker build . -f Dockerfile.multi.python.alpine -t uv-multi-python-alpine
 docker run --rm uv-multi-python-alpine
 ```
 
+## Image size comparison:
+```bash
+uv-single-uvrun                454MB
+uv-single-python               267MB
+uv-multi-python                240MB
+uv-multi-python-alpine         168MB
+```	
+
