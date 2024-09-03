@@ -1,0 +1,21 @@
+FROM python:3.12-alpine as build
+
+# install UV
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+
+# copy files
+COPY . /app/
+
+WORKDIR /app
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --no-dev --frozen
+
+FROM python:3.12-alpine
+
+COPY --from=build /app/.venv /app/.venv
+COPY . /app/
+
+WORKDIR /app
+
+ENV PATH="/app/.venv/bin:$PATH"
+CMD ["python", "hello.py"]
